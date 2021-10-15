@@ -7,6 +7,7 @@ class List extends React.Component {
     {
       this.state = {
         users: [],
+        listItems:[]
       };
     }
   }
@@ -16,30 +17,28 @@ class List extends React.Component {
       const data =await res.json();
       console.log(data)
       this.setState({users:data})
+        this.setState({listItems:this.state.users.map(user=>{
+            return (
+            <li>{user.login}</li>
+            )
+        })})
+     
 
-      return(
-          <div>
-              {this.state.users.map(user=>{
-                  <p key={user.id}>{user.login}</p>
-              })}
-          </div>
-      )
     
   }
 
 
   componentDidMount() {
+
+   
  
    this.showList()
 }
   render() {
     return <div>
         {
-            this.state.users.map(user=>{
-                return (
-                <p>{user.login}</p>
-                )
-            })
+            <ul>{this.state.listItems}</ul>
+            
         }
     </div>
   }
