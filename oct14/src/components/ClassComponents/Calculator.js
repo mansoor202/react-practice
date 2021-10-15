@@ -16,7 +16,9 @@ class Calculator extends Component{
     changeHandler1=(e)=>{
         this.setState(
             {value1:e.target.value}
+            
         )
+       
     }
     changeHandler2=(e)=>{
         this.setState(
@@ -26,10 +28,18 @@ class Calculator extends Component{
 
     handleSubmit=()=>{
         this.setState({sum:(+this.state.value1)+(+this.state.value2)})
+       
     }
 
+    shouldComponentUpdate(nextProps, nextState) {  
+        if (this.state.sum === nextState.sum) {  
+        return false;  
+        }  
+        return true;  
+        }  
     componentDidUpdate(){
         console.log("component updated")
+       
     }
 
     render(){
