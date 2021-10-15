@@ -5,6 +5,7 @@ class Calculator extends Component{
     constructor(props){
         super(props);
         this.state={
+            name:this.props.name,
             value1:0,
             value2:0,
             sum:0
@@ -27,11 +28,14 @@ class Calculator extends Component{
         this.setState({sum:(+this.state.value1)+(+this.state.value2)})
     }
 
+    componentDidUpdate(){
+        console.log("component updated")
+    }
 
     render(){
         return(
             <>
-            <div>Class Component Calculator</div>
+            <div><h2>{this.state.name}</h2></div>
             <p>value1: {this.state.value1}</p>
             <p>value2: {this.state.value2}</p>
             <h2>sum: {this.state.sum}</h2>
