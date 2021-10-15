@@ -1,0 +1,22 @@
+.AuthPage{
+background-color:chartreuse;
+align-items: center;
+align-content: center;
+justify-content: center;
+width: fit-content;
+margin-left: 40%;
+height: 200px;
+
+
+
+}
+
+
+
+.login-comp{
+    width: 80%;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: floralwhite;
+}
