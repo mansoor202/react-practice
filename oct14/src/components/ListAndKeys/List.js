@@ -19,7 +19,7 @@ class List extends React.Component {
       this.setState({users:data})
         this.setState({listItems:this.state.users.map(user=>{
             return (
-            <li>{user.login}</li>
+            <li key={user.id}>{user.login}</li>
             )
         })})
      
@@ -29,9 +29,6 @@ class List extends React.Component {
 
 
   componentDidMount() {
-
-   
- 
    this.showList()
 }
   render() {
