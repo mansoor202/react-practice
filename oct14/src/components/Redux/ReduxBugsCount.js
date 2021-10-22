@@ -8,7 +8,7 @@ export function ReduxBugsCount(){
         setCount(count+1)
     })
     return(
-        <p>{errList.length}</p>
+        <p>{errList.errors.length}</p>
     )
 
 }
